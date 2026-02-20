@@ -13,3 +13,25 @@
  6. print the answer appropriately as pointer, character and string
  */ 
 
+#include <stdio.h>
+#include <string.h>
+
+int main( void ) {
+
+    char source[] = "The quick brown fox jumped over the lazy dog";
+    char search[] = "ump";
+
+    char* found = strstr(source, search);
+
+    if (found)
+    {
+        printf("Found %s in %s at position %d.\n", search, source, *found);
+    }
+    else
+    {
+        printf("Did not find %s within %s.\n", search, source);
+    }
+    
+    return 0;
+
+}

@@ -6,13 +6,23 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main( int argc, char **argv ) {
+
+    int check;
+    int valid;
 
     printf("Number of args: %d\n",argc);
 
     for( int k=0; k<argc; ++k ) {
         printf("argv[%d]: %s\n",k,argv[k]);
+        printf("%d\n", atoi(argv[k]));
+
+    valid = sscanf(argv[k], "%d", &check);
+    if(valid)
+        printf("found %d\n", check);
+
     }
     return 0;
 }
